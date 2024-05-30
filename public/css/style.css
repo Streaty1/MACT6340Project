@@ -7,3 +7,7 @@ html {
 *:after {
     box-sizing: inherit;
 }
+
+.spacer{
+    min-height: 75px;
+}

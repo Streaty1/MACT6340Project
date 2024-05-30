@@ -15,16 +15,9 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div container>
-        <header  style="background-color:#000000; padding:1em;">
-            <ul class="topnav">
-                <a href="#home" class="active">Home</a>
-                <a href="#projects">Featured Projects</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </ul>
-        </header>
-    </div>
+    <header>
+        <%- include('header'); %>
+    </header>
 
     <div container class="home" style="background-image: url(./images/color-4158152.jpg); width: 100%; min-height: 50%;">
         
@@ -32,27 +25,26 @@
         <h3 style="text-align: center; color: rgb(17, 17, 17); padding-bottom: 9em;">Welcome to my NFT store!</h3>
     </div>
 
-    <div container class="projects">
+    <div container class="projects" style="padding-top: 5em;">
         <h2> Featured Projects</h2>
         <a href= "#">All Projects</a>
     </div>
 
-    <div container class="about">
+    <div container class="about" style="padding-top: 5em;">
         <h2>About</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <a href= "#">Contact us</a>
 
     </div>
-    <div container class="contact">
-        <link rel="html" href="./contact.html">
+    <div container class="contact"style="padding-top: 5em;">
+        <link rel="html" href="./contact.ejs">
           
     </div>
 
-    <div container style="background-color: black; padding:.5em; margin-top: 1em;">
-        <footer>
-        <p style="color:white">© Copyright 2024</p>
-        </footer>
+    <div class="container-fluid">
+        <%- include('footer'); %>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script type="module" src="./js/index.js"></script>
 </body>
