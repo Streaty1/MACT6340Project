@@ -19,10 +19,13 @@
     <div container>
     <div class="spacer"></div>
     <div>Projects</div>
-
-        <%=data %>
-
+    <% projectArray. forEach((item, index) => { %>
+        <div>
+            <a href='/project/<%= index + 1 %>'><%= item %></a>
+            </div>
+    <% }); %>
     </div>
+
     <div class="container-fluid">
         <%- include('footer'); %>
     </div>

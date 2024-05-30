@@ -16,7 +16,15 @@ app.get("/", (req, res) => {
 
 app.get("/projects", (req, res) => {
   res.render("projects.ejs", {projectArray: data});
+  if (id > data.length) {
+    throw new Error("No project with that ID");
+  }
+  res.render("project.ejs", { projectArray: data, which: id });
 });
+
+app.get("/project/:id", (req, res) => {
+  let id = req.params.id;
+})
 
 app.get("/contact", (req, res) => {
   res.render("contact.ejs");
@@ -32,6 +40,11 @@ app.post("/mail", async (req, res) => {
       res.send({ result: "failure" });
     });
 });
+
+app.use((err, req, res, next) => { 
+  console.log(err);
+  res.render("error.ejs");
+  });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
